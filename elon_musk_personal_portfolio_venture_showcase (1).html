@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk | Founder & Chief Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#080c14',
+                        darkCard: '#0f172a',
+                        cyanAccent: '#00f0ff',
+                        violetAccent: '#8b5cf6',
+                        metallic: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 20px rgba(0, 240, 255, 0.25)',
+                        'neon-violet': '0 0 20px rgba(139, 92, 246, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .glow-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 240, 255, 0.4);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 antialiased selection:bg-cyanAccent selection:text-black glow-grid">
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyanAccent to-violetAccent p-[1px] flex items-center justify-center">
+                    <div class="w-full h-full bg-darkBg rounded-[7px] flex items-center justify-center group-hover:bg-transparent transition-colors">
+                        <span class="font-mono font-extrabold text-cyanAccent group-hover:text-black transition-colors">X</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold tracking-tight text-lg leading-none">ELON MUSK <span class="text-xs text-cyanAccent font-mono">FRS</span></span>
+                    <span class="text-[10px] text-slate-400 font-mono tracking-widest uppercase mt-1">Multi-Planetary Architecture</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-cyanAccent transition-colors">About</a>
+                <a href="#ventures" class="text-slate-300 hover:text-cyanAccent transition-colors">Ventures</a>
+                <a href="#timeline" class="text-slate-300 hover:text-cyanAccent transition-colors">Timeline</a>
+                <a href="#first-principles" class="text-slate-300 hover:text-cyanAccent transition-colors">First Principles</a>
+                <a href="#honors" class="text-slate-300 hover:text-cyanAccent transition-colors">Honors</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-cyanAccent to-cyan-500 text-black font-semibold text-sm hover:shadow-neon-cyan transition-all transform hover:-translate-y-0.5">
+                    Connect (Grok AI)
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Toggle Navigation">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-slate-800 px-6 py-6 flex flex-col gap-4">
+            <a href="#about" class="mobile-link text-slate-300 hover:text-cyanAccent py-1">About</a>
+            <a href="#ventures" class="mobile-link text-slate-300 hover:text-cyanAccent py-1">Ventures</a>
+            <a href="#timeline" class="mobile-link text-slate-300 hover:text-cyanAccent py-1">Timeline</a>
+            <a href="#first-principles" class="mobile-link text-slate-300 hover:text-cyanAccent py-1">First Principles</a>
+            <a href="#honors" class="mobile-link text-slate-300 hover:text-cyanAccent py-1">Honors</a>
+            <a href="#contact" class="mobile-link text-center px-5 py-2.5 rounded-lg bg-cyanAccent text-black font-semibold text-sm mt-2">
+                Connect (Grok AI)
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <!-- Ambient Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-violet-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-cyanAccent text-xs font-mono mb-8 animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-cyanAccent"></span>
+                    ACTIVE INITIATIVES: STARSHIP ORBITAL & GROK 3.0
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+                    Engineering the Future of <br>
+                    <span class="bg-gradient-to-r from-cyanAccent via-sky-400 to-violetAccent bg-clip-text text-transparent">
+                        Human Consciousness
+                    </span>
+                </h1>
+
+                <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                    Founder, CEO & Chief Engineer across aerospace, sustainable mobility, neurotechnology, and artificial intelligence. Driven by first-principles reasoning.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+                    <a href="#ventures" class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyanAccent to-sky-500 text-black font-bold text-base hover:shadow-neon-cyan transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                        Explore Ventures <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#timeline" class="px-8 py-4 rounded-xl glass-panel text-white font-semibold text-base hover:bg-slate-800/80 hover:border-slate-600 transition-all transform hover:-translate-y-1">
+                        View Key Milestones
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-xl border border-violet-500/40 bg-violet-950/20 text-violet-300 font-semibold text-base hover:bg-violet-900/30 hover:border-violet-400 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                        <i data-lucide="bot" class="w-5 h-5"></i> Chat with Grok
+                    </a>
+                </div>
+
+                <!-- Hero Metrics Display -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-slate-800/80">
+                    <div class="glass-panel p-5 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyanAccent counter" data-target="900">$0</div>
+                        <div class="text-xs text-slate-400 font-medium uppercase mt-1 tracking-wider">Net Worth / Impact ($B+)</div>
+                    </div>
+                    <div class="glass-panel p-5 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyanAccent counter" data-target="100">0</div>
+                        <div class="text-xs text-slate-400 font-medium uppercase mt-1 tracking-wider">Reusable Rockets Landed</div>
+                    </div>
+                    <div class="glass-panel p-5 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyanAccent counter" data-target="7600">0</div>
+                        <div class="text-xs text-slate-400 font-medium uppercase mt-1 tracking-wider">Starlink Satellites</div>
+                    </div>
+                    <div class="glass-panel p-5 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyanAccent">1st</div>
+                        <div class="text-xs text-slate-400 font-medium uppercase mt-1 tracking-wider">Commercial ISS Flight</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Narrative -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-cyanAccent text-xs font-mono uppercase tracking-widest">
+                        <i data-lucide="compass" class="w-4 h-4"></i> Philosophical Vision & Foundations
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        "If the odds are against you, you should still do it if the goal is important enough."
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Born in Pretoria, South Africa, my journey began with self-taught computer programming at age 12, creating the space game <em>Blastar</em>. My pursuit of physics and economics at the <strong>University of Pennsylvania (Wharton School)</strong> reinforced a lifelong commitment to understanding how the universe works and solving existential risks facing humanity.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        Rather than analyzing trendlines, I apply <strong>First-Principles Thinking</strong>: boiling problems down to their fundamental truths and reasoning up from there. Whether reducing the cost per kilogram to orbit by 10x or digitizing neural interface bandwidth, physics is the ultimate baseline limit.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl glass-panel border-l-4 border-l-cyanAccent">
+                            <h4 class="font-bold text-white text-sm mb-1">Multi-Planetary Life</h4>
+                            <p class="text-xs text-slate-400">Establishing a self-sustaining city on Mars to safeguard the light of human consciousness.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-panel border-l-4 border-l-violetAccent">
+                            <h4 class="font-bold text-white text-sm mb-1">Sustainable Acceleration</h4>
+                            <p class="text-xs text-slate-400">Transitioning the terrestrial grid and transport to clean electric power and autonomous logistics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Academic & Background Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-8 rounded-2xl relative overflow-hidden border border-slate-700/60 shadow-2xl">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                            <i data-lucide="graduation-cap" class="text-cyanAccent w-6 h-6"></i> Academic Background
+                        </h3>
+                        <ul class="space-y-6">
+                            <li class="relative pl-6 border-l border-slate-700">
+                                <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-cyanAccent"></span>
+                                <h4 class="font-semibold text-white">University of Pennsylvania</h4>
+                                <p class="text-xs font-mono text-cyanAccent mt-0.5">B.S. Economics (Wharton) & B.A. Physics</p>
+                                <p class="text-xs text-slate-400 mt-1">Focused on materials science, energy density, and high-tech market dynamics.</p>
+                            </li>
+                            <li class="relative pl-6 border-l border-slate-700">
+                                <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                                <h4 class="font-semibold text-white">Queen's University</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Ontario, Canada (Undergraduate Studies)</p>
+                            </li>
+                            <li class="relative pl-6 border-l border-slate-700">
+                                <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                                <h4 class="font-semibold text-white">Pretoria Boys High School</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Early passion for computing, physics, and science fiction.</p>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>EARLY PROJECT: BLASTAR (12 Y/O)</span>
+                            <span class="text-cyanAccent">SOLD FOR $500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ventures" class="py-24 bg-slate-950/60 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 text-cyanAccent text-xs font-mono uppercase tracking-widest mb-3">
+                    <i data-lucide="layers" class="w-4 h-4"></i> Portfolio of Companies
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Active & Early Ventures</h2>
+                <p class="text-slate-400 mt-4 text-sm sm:text-base">
+                    Transforming industries from multi-planetary transportation and electric mobility to artificial intelligence and neurotech.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+                <button class="filter-btn active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all bg-cyanAccent text-black shadow-neon-cyan" data-filter="all">All Ecosystems</button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all glass-panel text-slate-300 hover:text-cyanAccent" data-filter="space">Space & Exploration</button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all glass-panel text-slate-300 hover:text-cyanAccent" data-filter="energy">Sustainable Energy</button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all glass-panel text-slate-300 hover:text-cyanAccent" data-filter="ai">AI & Tech</button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all glass-panel text-slate-300 hover:text-cyanAccent" data-filter="infra">Infrastructure & Finance</button>
+            </div>
+
+            <!-- Grid of Cards -->
+            <div id="ventures-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SpaceX Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="space">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-cyan-500/10 text-cyanAccent border border-cyan-500/20">
+                                <i data-lucide="rocket" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">2002–Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">SpaceX</h3>
+                        <p class="text-xs font-mono text-cyanAccent mb-4">CEO & Chief Engineer</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Pioneered reusable rocket architecture with Falcon 9, Heavy, and Starship. Operating Starlink satellite constellation delivering high-speed internet worldwide.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Key Tech: Starship / Raptor</span>
+                            <span class="text-emerald-400">Reusable</span>
+                        </div>
+                        <button onclick="openVentureModal('spacex')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tesla Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="energy">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">2004–Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Tesla, Inc.</h3>
+                        <p class="text-xs font-mono text-red-400 mb-4">CEO & Product Architect</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Accelerating world transition to sustainable energy. Engineered Roadster, Model S/3/X/Y, Cybertruck, Megapack grid storage, and Full Self-Driving (FSD).
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Key Tech: FSD Supercomputer</span>
+                            <span class="text-cyanAccent">Gigafactories</span>
+                        </div>
+                        <button onclick="openVentureModal('tesla')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- xAI Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="ai">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">2023–Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">xAI / Grok</h3>
+                        <p class="text-xs font-mono text-violet-400 mb-4">Founder & CEO</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Building maximum truth-seeking AI to assist humanity in understanding the fundamental nature of the universe. Creators of the Grok series and Memphis Colossus cluster.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Clusters: 100k+ H100 GPU</span>
+                            <span class="text-violet-400">Frontier AI</span>
+                        </div>
+                        <button onclick="openVentureModal('xai')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Neuralink Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="ai">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                <i data-lucide="brain" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">2016–Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Neuralink</h3>
+                        <p class="text-xs font-mono text-purple-400 mb-4">Co-founder</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Developing ultra-high bandwidth brain-computer interfaces to restore autonomy to individuals with quadriplegia and solve neurological conditions.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Device: N1 Brain Chip</span>
+                            <span class="text-purple-400">Human Trials</span>
+                        </div>
+                        <button onclick="openVentureModal('neuralink')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- The Boring Company Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="infra">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                                <i data-lucide="disc" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">2017–Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">The Boring Co.</h3>
+                        <p class="text-xs font-mono text-amber-400 mb-4">Founder</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Constructing fast, safe, and low-cost underground tunneling transit networks (Las Vegas Loop) to solve soul-crushing traffic congestion.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Machine: Prufrock TBM</span>
+                            <span class="text-amber-400">3D Transit</span>
+                        </div>
+                        <button onclick="openVentureModal('boring')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- X Corp Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="infra">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">2022–Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">X Corp. / Twitter</h3>
+                        <p class="text-xs font-mono text-sky-400 mb-4">Owner & CTO</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Building the Everything App: global digital town square dedicated to preserving free speech, live streaming, long-form content, and payments.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Vision: Global Town Square</span>
+                            <span class="text-sky-400">X Money</span>
+                        </div>
+                        <button onclick="openVentureModal('xcorp')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Early Ventures Card -->
+                <div class="venture-card glass-panel glass-panel-hover rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-category="infra">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <i data-lucide="credit-card" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-slate-300">1995–2002</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Zip2 & PayPal</h3>
+                        <p class="text-xs font-mono text-emerald-400 mb-4">Co-Founder</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Co-founded Zip2 (acquired by Compaq for $307M) and X.com/PayPal (acquired by eBay for $1.5B), creating early web mapping and digital finance.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="border-t border-slate-800 pt-4 mb-4 flex justify-between text-xs font-mono text-slate-400">
+                            <span>Exit Value: $1.8B Total</span>
+                            <span class="text-emerald-400">Early Web</span>
+                        </div>
+                        <button onclick="openVentureModal('paypal')" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyanAccent hover:text-black text-slate-200 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            View Engineering Specs <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-24 relative border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-cyanAccent text-xs font-mono uppercase tracking-widest mb-3">
+                    <i data-lucide="git-commit" class="w-4 h-4"></i> Career Progression
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Timeline & Milestones</h2>
+                <p class="text-slate-400 mt-4 text-sm sm:text-base">
+                    From coding in South Africa to establishing orbital spaceflight and AI revolution.
+                </p>
+            </div>
+
+            <!-- Vertical Timeline Container -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Center Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-cyanAccent via-violetAccent to-slate-800 hidden md:block"></div>
+
+                <div class="space-y-12">
+                    <!-- 1995: Zip2 -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="w-full md:w-[45%] md:pr-8 md:text-right mb-4 md:mb-0">
+                            <div class="glass-panel p-6 rounded-2xl border border-slate-800 group-hover:border-cyan-500/40 transition-all">
+                                <span class="text-xs font-mono text-cyanAccent font-bold">1995–1999</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Founding Zip2</h3>
+                                <p class="text-xs text-slate-300 mt-2">Created online city guide software with Kimbal Musk. Acquired by Compaq for $307M.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyanAccent hidden md:flex items-center justify-center text-cyanAccent z-10 font-mono text-xs">
+                            01
+                        </div>
+                        <div class="w-full md:w-[45%] md:pl-8"></div>
+                    </div>
+
+                    <!-- 1999: X.com & PayPal -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="w-full md:w-[45%] md:pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyanAccent hidden md:flex items-center justify-center text-cyanAccent z-10 font-mono text-xs">
+                            02
+                        </div>
+                        <div class="w-full md:w-[45%] md:pl-8">
+                            <div class="glass-panel p-6 rounded-2xl border border-slate-800 group-hover:border-cyan-500/40 transition-all">
+                                <span class="text-xs font-mono text-cyanAccent font-bold">1999–2002</span>
+                                <h3 class="text-lg font-bold text-white mt-1">X.com & PayPal Acquisition</h3>
+                                <p class="text-xs text-slate-300 mt-2">Pioneered online banking with X.com, merged into PayPal. Acquired by eBay for $1.5B in stock.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2002-2004: SpaceX & Tesla -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="w-full md:w-[45%] md:pr-8 md:text-right mb-4 md:mb-0">
+                            <div class="glass-panel p-6 rounded-2xl border border-slate-800 group-hover:border-cyan-500/40 transition-all">
+                                <span class="text-xs font-mono text-cyanAccent font-bold">2002–2004</span>
+                                <h3 class="text-lg font-bold text-white mt-1">SpaceX & Tesla Founding</h3>
+                                <p class="text-xs text-slate-300 mt-2">Founded Space Exploration Technologies (SpaceX) and joined Tesla Motors as Series A lead & Product Architect.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyanAccent hidden md:flex items-center justify-center text-cyanAccent z-10 font-mono text-xs">
+                            03
+                        </div>
+                        <div class="w-full md:w-[45%] md:pl-8"></div>
+                    </div>
+
+                    <!-- 2012: Commercial Spaceflight to ISS -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="w-full md:w-[45%] md:pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyanAccent hidden md:flex items-center justify-center text-cyanAccent z-10 font-mono text-xs">
+                            04
+                        </div>
+                        <div class="w-full md:w-[45%] md:pl-8">
+                            <div class="glass-panel p-6 rounded-2xl border border-slate-800 group-hover:border-cyan-500/40 transition-all">
+                                <span class="text-xs font-mono text-cyanAccent font-bold">2012–2015</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Dragon ISS Berthing & Falcon 9 Landing</h3>
+                                <p class="text-xs text-slate-300 mt-2">Dragon became 1st commercial spacecraft to visit ISS. Achieved 1st orbital class rocket booster propulsive landing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2016-2022: Neuralink, Boring & Twitter -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="w-full md:w-[45%] md:pr-8 md:text-right mb-4 md:mb-0">
+                            <div class="glass-panel p-6 rounded-2xl border border-slate-800 group-hover:border-cyan-500/40 transition-all">
+                                <span class="text-xs font-mono text-cyanAccent font-bold">2016–2022</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Neuralink, Boring Co. & X Acquisition</h3>
+                                <p class="text-xs text-slate-300 mt-2">Expanded into brain computer interfaces, tunneling, and acquired Twitter to transform into X Corp.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyanAccent hidden md:flex items-center justify-center text-cyanAccent z-10 font-mono text-xs">
+                            05
+                        </div>
+                        <div class="w-full md:w-[45%] md:pl-8"></div>
+                    </div>
+
+                    <!-- 2023-Present: xAI, DOGE & Starship -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="w-full md:w-[45%] md:pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyanAccent hidden md:flex items-center justify-center text-cyanAccent z-10 font-mono text-xs">
+                            06
+                        </div>
+                        <div class="w-full md:w-[45%] md:pl-8">
+                            <div class="glass-panel p-6 rounded-2xl border border-slate-800 group-hover:border-cyan-500/40 transition-all">
+                                <span class="text-xs font-mono text-cyanAccent font-bold">2023–Present</span>
+                                <h3 class="text-lg font-bold text-white mt-1">xAI Launch & Starship Orbital Tests</h3>
+                                <p class="text-xs text-slate-300 mt-2">Founded xAI, deployed Memphis Supercluster, and advanced Starship flight tests towards Mars colonization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="first-principles" class="py-24 bg-slate-950/80 border-t border-slate-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-violetAccent text-xs font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="terminal" class="w-4 h-4"></i> Reasoning Engine
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">First Principles Simulator</h2>
+                    <p class="text-slate-400 mt-3 text-sm">
+                        Deconstruct complex engineering challenges down to raw material costs and physical truths.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-violet-500/30 shadow-neon-violet">
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <button onclick="runSimulator('rocket')" id="btn-sim-rocket" class="sim-btn px-4 py-2 rounded-xl text-xs font-mono bg-violet-600 text-white font-bold transition-all">
+                            Problem: Rocket Cost ($60M+)
+                        </button>
+                        <button onclick="runSimulator('battery')" id="btn-sim-battery" class="sim-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-white transition-all">
+                            Problem: Battery Pack ($600/kWh)
+                        </button>
+                        <button onclick="runSimulator('tunnel')" id="btn-sim-tunnel" class="sim-btn px-4 py-2 rounded-xl text-xs font-mono glass-panel text-slate-300 hover:text-white transition-all">
+                            Problem: Tunneling Cost ($1B/mile)
+                        </button>
+                    </div>
+
+                    <div class="bg-black/80 rounded-2xl p-6 font-mono text-xs sm:text-sm border border-slate-800 min-h-[220px] flex flex-col justify-between">
+                        <div id="simulator-output" class="space-y-3">
+                            <div class="text-slate-500">// Select a problem above to execute First-Principles Deconstruction...</div>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-800/80 flex justify-between items-center text-slate-400 text-xs">
+                            <span>Status: <span id="sim-status" class="text-emerald-400">READY</span></span>
+                            <button onclick="generateRandomQuote()" class="text-cyanAccent hover:underline flex items-center gap-1">
+                                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Load Quote
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Philosophical Quote Display Box -->
+                    <div class="mt-6 p-4 rounded-xl bg-violet-950/20 border border-violet-500/20 flex items-start gap-3">
+                        <i data-lucide="quote" class="w-6 h-6 text-violet400 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <p id="quote-display" class="text-sm text-slate-200 italic font-serif">
+                                "Physics is a good framework for thinking. Boil things down to their fundamental truths and reason up from there, as opposed to reasoning by analogy."
+                            </p>
+                            <span class="text-xs font-mono text-violet-400 block mt-2">— Elon Musk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="honors" class="py-24 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-cyanAccent text-xs font-mono uppercase tracking-widest mb-3">
+                    <i data-lucide="award" class="w-4 h-4"></i> Recognition
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Honors & Governance</h2>
+                <p class="text-slate-400 mt-4 text-sm">
+                    Acknowledged by international scientific bodies, engineering academies, and public service initiatives.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-cyanAccent mb-4"></i>
+                    <h3 class="font-bold text-white text-lg">Fellow of the Royal Society</h3>
+                    <p class="text-xs font-mono text-cyanAccent mt-1">FRS (2018)</p>
+                    <p class="text-xs text-slate-400 mt-3">Elected for contributions to spaceflight, electric vehicles, and battery systems development.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all">
+                    <i data-lucide="landmark" class="w-8 h-8 text-cyanAccent mb-4"></i>
+                    <h3 class="font-bold text-white text-lg">National Academy of Engineering</h3>
+                    <p class="text-xs font-mono text-cyanAccent mt-1">NAE Member (2022)</p>
+                    <p class="text-xs text-slate-400 mt-3">For leadership in reusable launch vehicles and sustainable energy distribution systems.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all">
+                    <i data-lucide="star" class="w-8 h-8 text-cyanAccent mb-4"></i>
+                    <h3 class="font-bold text-white text-lg">Time Person of the Year</h3>
+                    <p class="text-xs font-mono text-cyanAccent mt-1">TIME (2021)</p>
+                    <p class="text-xs text-slate-400 mt-3">Recognized for reshaping life on Earth and potentially life off Earth.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all">
+                    <i data-lucide="file-check" class="w-8 h-8 text-cyanAccent mb-4"></i>
+                    <h3 class="font-bold text-white text-lg">Royal Aeronautical Gold Medal</h3>
+                    <p class="text-xs font-mono text-cyanAccent mt-1">RAeS Medal</p>
+                    <p class="text-xs text-slate-400 mt-3">Highest award in aeronautical study for pioneering private commercial orbital flight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-950/90 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-cyanAccent text-xs font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="send" class="w-4 h-4"></i> High-Priority Channel
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Get In Touch</h2>
+                    <p class="text-slate-400 mt-3 text-sm">
+                        Submit engineering inquiries or venture proposals directly. Automated triage provided by <strong>Grok Assistant</strong>.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 uppercase mb-2">Name / Identity</label>
+                                <input type="text" required placeholder="e.g. Nikola Tesla" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition-all text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 uppercase mb-2">Communication Channel (Email)</label>
+                                <input type="email" required placeholder="nikola@ether.org" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition-all text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-slate-300 uppercase mb-2">Venture Category</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-cyanAccent transition-all text-sm">
+                                <option>SpaceX / Orbital Propulsion</option>
+                                <option>Tesla / Energy Storage & Autonomy</option>
+                                <option>xAI / Frontier AI Models</option>
+                                <option>Neuralink / BCI Diagnostics</option>
+                                <option>General Inquiry / Media</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-slate-300 uppercase mb-2">Engineering Brief / Proposal</label>
+                            <textarea rows="4" required placeholder="Summarize fundamental principles and key constraints..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition-all text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyanAccent via-sky-500 to-violetAccent text-black font-bold text-sm tracking-wider uppercase hover:shadow-neon-cyan transition-all flex items-center justify-center gap-2">
+                            <span>Dispatch Proposal to Grok AI</span> <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+
+                    <!-- Simulated Response Container -->
+                    <div id="ai-response-box" class="hidden mt-8 p-6 rounded-2xl bg-cyan-950/30 border border-cyan-500/40">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded-lg bg-cyanAccent text-black flex items-center justify-center font-bold">
+                                <i data-lucide="bot" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Grok Assistant Triage</h4>
+                                <p class="text-[10px] font-mono text-cyanAccent">REAL-TIME SIMULATION ACTIVE</p>
+                            </div>
+                        </div>
+                        <p id="ai-response-text" class="text-xs font-mono text-slate-300 leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="venture-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel w-full max-w-2xl rounded-3xl p-6 sm:p-8 border border-slate-700 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeVentureModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2" aria-label="Close Modal">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 border-t border-slate-800/80 bg-black/60 text-slate-500 text-xs font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-cyanAccent font-bold">ELON MUSK</span>
+                <span>© 2026. Occupy Mars.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://x.com" target="_blank" class="hover:text-cyanAccent transition-colors">X (@elonmusk)</a>
+                <a href="#ventures" class="hover:text-cyanAccent transition-colors">SpaceX</a>
+                <a href="#ventures" class="hover:text-cyanAccent transition-colors">Tesla</a>
+                <a href="#ventures" class="hover:text-cyanAccent transition-colors">xAI</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Animated Metric Counters
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText.replace('$', '').replace('+', '');
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = (counter.innerText.includes('$') ? '$' : '') + Math.ceil(count + inc) + (target >= 1000 ? '+' : '');
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = (counter.innerText.includes('$') ? '$' : '') + target + '+';
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger Counter on Scroll
+        let countTriggered = false;
+        window.addEventListener('scroll', () => {
+            const heroSection = document.getElementById('hero');
+            const rect = heroSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && !countTriggered) {
+                animateCounters();
+                countTriggered = true;
+            }
+        });
+        // Initial run in case already visible
+        animateCounters();
+
+        // Ventures Category Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const ventureCards = document.querySelectorAll('.venture-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-cyanAccent', 'text-black', 'shadow-neon-cyan');
+                    b.classList.add('glass-panel', 'text-slate-300');
+                });
+                btn.classList.add('active', 'bg-cyanAccent', 'text-black', 'shadow-neon-cyan');
+                btn.classList.remove('glass-panel', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+                ventureCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Content Data
+        const ventureDetails = {
+            spacex: {
+                title: "SpaceX (Space Exploration Technologies)",
+                subtitle: "CEO & Chief Engineer | Founded 2002",
+                description: "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+                specs: [
+                    "Starship: Fully reusable super heavy-lift launch vehicle capable of carrying 100+ tons to Mars.",
+                    "Starlink: World's largest satellite internet constellation using laser inter-satellite links.",
+                    "Falcon 9: First orbital class rocket capable of reflight, drastically reducing access cost."
+                ]
+            },
+            tesla: {
+                title: "Tesla, Inc.",
+                subtitle: "CEO & Product Architect | Joined 2004",
+                description: "Tesla designs and manufactures electric vehicles, battery energy storage systems from home to grid-scale, solar panels and solar roof tiles, and related products.",
+                specs: [
+                    "Full Self-Driving (FSD): Vision-only end-to-end neural network autonomous driving engine.",
+                    "Megapack & Powerwall: Grid stabilization battery architecture for massive renewable integration.",
+                    "Gigafactories: Ultra-large scale automated manufacturing plants operating in US, China, and Germany."
+                ]
+            },
+            xai: {
+                title: "xAI / Grok AI",
+                subtitle: "Founder & CEO | Founded 2023",
+                description: "xAI focuses on creating artificial intelligence to advance human scientific discovery, featuring maximum truth-seeking models and zero bias safeguards.",
+                specs: [
+                    "Grok 3: Advanced reasoning model trained on state-of-the-art supercomputing clusters.",
+                    "Memphis Colossus: 100,000+ Liquid-cooled Nvidia H100 GPU training cluster deployed in record time.",
+                    "Grokipedia & Search: Deep integration with real-time X platform streaming data."
+                ]
+            },
+            neuralink: {
+                title: "Neuralink",
+                subtitle: "Co-Founder | Founded 2016",
+                description: "Neuralink is developing ultra-high bandwidth brain-machine interfaces to connect humans and computers, aiming to treat brain/spine injuries.",
+                specs: [
+                    "N1 Implant: 1,024 electrode channels across 64 ultra-thin threads implanted by custom robot.",
+                    "R1 Robot: Surgical robot designed to insert neural threads without hitting blood vessels.",
+                    "Telepathy App: Enables direct neural control of computers and mobile devices."
+                ]
+            },
+            boring: {
+                title: "The Boring Company",
+                subtitle: "Founder | Founded 2017",
+                description: "Creates safe, fast-to-dig, and low-cost transportation, utility, and freight tunnels to solve urban traffic gridlock.",
+                specs: [
+                    "Prufrock TBM: All-electric tunneling machine designed to continuous-mine 1 mile per week.",
+                    "Las Vegas Loop: Underground high-speed Tesla EV system carrying thousands of passengers daily."
+                ]
+            },
+            xcorp: {
+                title: "X Corp. / Twitter",
+                subtitle: "Owner & CTO | Acquired 2022",
+                description: "Building X into the global everything app, integrating microblogging, payments, video streaming, and AI capabilities.",
+                specs: [
+                    "Global Town Square: Open-algorithm public square prioritizing free speech and creator monetization.",
+                    "X Money: Upcoming peer-to-peer digital payment and banking infrastructure."
+                ]
+            },
+            paypal: {
+                title: "Zip2 & PayPal (X.com)",
+                subtitle: "Co-Founder | 1995 - 2002",
+                description: "Key early internet ventures that pioneered digitized business mapping and global electronic payment processing.",
+                specs: [
+                    "Zip2: Acquired by Compaq for $307 Million in 1999.",
+                    "PayPal / X.com: Merged digital bank acquired by eBay for $1.5 Billion in 2002."
+                ]
+            }
+        };
+
+        function openVentureModal(key) {
+            const data = ventureDetails[key];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="inline-flex items-center gap-2 text-cyanAccent text-xs font-mono uppercase tracking-widest mb-2">Technical Dossier</div>
+                <h3 class="text-3xl font-extrabold text-white mb-1">${data.title}</h3>
+                <p class="text-xs font-mono text-slate-400 mb-6">${data.subtitle}</p>
+                
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">${data.description}</p>
+                
+                <h4 class="font-bold text-white text-sm uppercase font-mono mb-3 text-cyanAccent">Key Architectural Innovations</h4>
+                <ul class="space-y-3 mb-8">
+                    ${data.specs.map(s => `
+                        <li class="flex items-start gap-2 text-xs text-slate-300">
+                            <span class="text-cyanAccent font-bold">›</span>
+                            <span>${s}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+
+                <button onclick="closeVentureModal()" class="w-full py-3 rounded-xl bg-cyanAccent text-black font-bold text-xs uppercase tracking-wider">Close Technical Dossier</button>
+            `;
+
+            document.getElementById('venture-modal').classList.remove('hidden');
+        }
+
+        function closeVentureModal() {
+            document.getElementById('venture-modal').classList.add('hidden');
+        }
+
+        // First Principles Simulator Logic
+        const simData = {
+            rocket: [
+                "1. Boiling down launch costs: Raw materials (Aerospace Aluminum, Titanium, Methane, Liquid Oxygen) cost ~1% of standard rocket price.",
+                "2. Standard industry practice: Discarding multi-million dollar rockets into the ocean after single use.",
+                "3. First Principles Conclusion: Build reusable propellant systems. Result = Falcon 9 & Starship architecture reducing costs by 90%."
+            ],
+            battery: [
+                "1. Boiling down energy storage: Material constituents (Cobalt, Nickel, Aluminum, Carbon, Polymers, Steel).",
+                "2. Raw spot market cost of materials = ~$80/kWh vs market battery pack price of $600/kWh.",
+                "3. First Principles Conclusion: Build massive automated Gigafactories to combine raw materials directly into cell formats."
+            ],
+            tunnel: [
+                "1. Boring machine speed: Standard TBMs are slower than a snail (0.002 mph).",
+                "2. Tunnels cost $1 Billion per mile due to slow speed and manual lining assembly.",
+                "3. First Principles Conclusion: Increase TBM power by 3x, automate continuous mining/segment placement, convert to electric power."
+            ]
+        };
+
+        function runSimulator(type) {
+            const output = document.getElementById('simulator-output');
+            const status = document.getElementById('sim-status');
+            
+            // Highlight Buttons
+            document.querySelectorAll('.sim-btn').forEach(b => {
+                b.classList.remove('bg-violet-600', 'text-white', 'font-bold');
+                b.classList.add('glass-panel', 'text-slate-300');
+            });
+
+            if (type === 'rocket') document.getElementById('btn-sim-rocket').classList.add('bg-violet-600', 'text-white', 'font-bold');
+            if (type === 'battery') document.getElementById('btn-sim-battery').classList.add('bg-violet-600', 'text-white', 'font-bold');
+            if (type === 'tunnel') document.getElementById('btn-sim-tunnel').classList.add('bg-violet-600', 'text-white', 'font-bold');
+
+            status.innerText = "DECONSTRUCTING...";
+            status.className = "text-amber-400 font-bold";
+            output.innerHTML = "";
+
+            const lines = simData[type];
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    const p = document.createElement('p');
+                    p.className = index === 2 ? "text-cyanAccent font-semibold pt-1" : "text-slate-300";
+                    p.innerText = line;
+                    output.appendChild(p);
+
+                    if (index === lines.length - 1) {
+                        status.innerText = "COMPLETE";
+                        status.className = "text-emerald-400 font-bold";
+                    }
+                }, (index + 1) * 400);
+            });
+        }
+
+        // Philosophy Quotes
+        const quotes = [
+            "Physics is a good framework for thinking. Boil things down to their fundamental truths and reason up from there.",
+            "I'd rather be optimistic and wrong than pessimistic and right.",
+            "Persistence is very important. You should not give up unless you are forced to give up.",
+            "When something is important enough, you do it even if the odds are not in your favor.",
+            "Some people don't like change, but you need to embrace change if the alternative is disaster."
+        ];
+
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote-display').innerText = `"${quotes[randomIndex]}"`;
+        }
+
+        // Simulated Contact Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const responseBox = document.getElementById('ai-response-box');
+            const responseText = document.getElementById('ai-response-text');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Processing via Grok AI...`;
+            lucide.createIcons();
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = `<span>Dispatch Proposal to Grok AI</span> <i data-lucide="send" class="w-4 h-4"></i>`;
+                lucide.createIcons();
+
+                responseBox.classList.remove('hidden');
+                responseText.innerText = "SYSTEM NOTICE: Message analyzed by Grok Assistant. Priority score: HIGH. Your fundamental constraints align with active engineering objectives. Inquiry routed to technical leadership.";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
