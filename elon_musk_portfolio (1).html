@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk | Executive & Chief Engineer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0a0e17;
+            --bg-surface: #111827;
+            --bg-surface-elevated: #1f293d;
+            --bg-glass: rgba(17, 24, 39, 0.75);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(6, 182, 212, 0.5);
+            
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            
+            --accent-cyan: #06b6d4;
+            --accent-cyan-glow: rgba(6, 182, 212, 0.25);
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            --max-width: 1200px;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+        }
+
+        .brand-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-logo .accent {
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-cyan);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: var(--transition-smooth);
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 7rem 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-cyan-glow);
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent-cyan);
+            color: #000;
+            box-shadow: 0 4px 14px var(--accent-cyan-glow);
+        }
+
+        .btn-primary:hover {
+            background: #22d3ee;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-secondary);
+            transform: translateY(-2px);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-text p strong {
+            color: var(--text-primary);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .metric-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .exp-card {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2rem;
+        }
+
+        .exp-header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exp-time {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-company {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .exp-role {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .exp-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .exp-bullets {
+            margin-left: 1.2rem;
+            list-style-type: disc;
+            color: var(--text-secondary);
+            font-size: 0.925rem;
+        }
+
+        .exp-bullets li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.85rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .tag:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .project-header {
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.925rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stack-item {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .edu-card, .honor-card {
+            margin-bottom: 1.25rem;
+        }
+
+        .edu-school {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .edu-degree {
+            color: var(--accent-cyan);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        .honor-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .honor-issuer {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(17, 24, 39, 0.9) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .exp-card {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 5rem 1.25rem;
+            }
+            .grid-2, .grid-3, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="accent">//</span> ELON MUSK
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Executive Leadership & Systems Engineering
+            </div>
+            <h1 class="hero-title">Elon Musk, FRS</h1>
+            <div class="hero-subtitle">
+                CEO & Chief Engineer @ SpaceX | CEO & Product Architect @ Tesla
+            </div>
+            <p class="hero-description">
+                Driving foundational breakthroughs across interplanetary transport, sustainable energy ecosystems, advanced neurotechnology, and scalable artificial intelligence.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View Innovations</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-header">
+                <span class="section-tag">01. Overview</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a technology executive, founder, and chief engineer dedicated to solving existential multi-generational challenges. My work focuses on expanding human consciousness and capability through hardware and software integration at massive scale.
+                    </p>
+                    <p>
+                        Through <strong>SpaceX</strong>, we are pioneering fully reusable orbital launch architecture to make humanity multiplanetary. At <strong>Tesla</strong>, we are accelerating the world’s transition to sustainable energy through electric vehicles, battery grid infrastructure, and autonomous systems.
+                    </p>
+                    <p>
+                        My broader ecosystem includes <strong>xAI</strong> (frontier artificial intelligence), <strong>Neuralink</strong> (ultra-high bandwidth brain-computer interfaces), <strong>The Boring Company</strong> (advanced tunneling technology), and <strong>X Corp.</strong> (global real-time information network).
+                    </p>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">300+</div>
+                        <div class="metric-label">Orbital Landings</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">5M+</div>
+                        <div class="metric-label">EVs Manufactured</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">6,000+</div>
+                        <div class="metric-label">Starlink Satellites</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">100/100</div>
+                        <div class="metric-label">First-Principles Focus</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header">
+                <span class="section-tag">02. Leadership</span>
+                <h2 class="section-title">Executive Experience</h2>
+            </div>
+            <div class="experience-list">
+                
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">2002 – PRESENT</span>
+                        <h3 class="exp-company">SpaceX</h3>
+                        <span class="exp-role">CEO & Chief Engineer</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Founded and scaled the world's premier commercial space transport enterprise. Oversaw complete end-to-end architecture of launch systems and satellite constellations.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Spearheaded development of Falcon 1, Falcon 9, Falcon Heavy, and Starship fully reusable vehicles.</li>
+                            <li>Pioneered commercial rocket landings and historic human spaceflight missions to the International Space Station.</li>
+                            <li>Architected Starlink, providing high-speed global satellite broadband internet across 70+ countries.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">2008 – PRESENT</span>
+                        <h3 class="exp-company">Tesla, Inc.</h3>
+                        <span class="exp-role">CEO & Product Architect</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Leading product strategy, vehicle design, and manufacturing innovation for global electrification and autonomous intelligence systems.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Oversees design and volume production for Roadster, Model S, Model X, Model 3, Model Y, and Cybertruck.</li>
+                            <li>Engineered Gigafactory global scaling and vertical integration of battery technologies.</li>
+                            <li>Directing Full Self-Driving (FSD) neural network architecture and Tesla Optimus humanoid robotics program.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">2023 – PRESENT</span>
+                        <h3 class="exp-company">xAI</h3>
+                        <span class="exp-role">Founder & CEO</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Building advanced artificial intelligence systems focused on understanding the true nature of the universe.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Launched Grok LLM series integrated with real-time knowledge streams.</li>
+                            <li>Building frontier-class compute clusters to accelerate foundational model training.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">2022 – PRESENT</span>
+                        <h3 class="exp-company">X Corp.</h3>
+                        <span class="exp-role">Executive Chairman & CTO</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Rebranded Twitter to X, transforming infrastructure into an all-in-one platform for speech, financial tools, and media content.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">2016 – PRESENT</span>
+                        <h3 class="exp-company">Neuralink</h3>
+                        <span class="exp-role">Co-Founder</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Developing ultra-high bandwidth brain-machine interfaces to restore autonomy to individuals with neurological conditions and enable future human-AI symbiosis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">2017 – PRESENT</span>
+                        <h3 class="exp-company">The Boring Company</h3>
+                        <span class="exp-role">Founder</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Constructing underground transport tunnels to solve urban traffic congestion through high-speed electric subterranean transit networks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">1999 – 2002</span>
+                        <h3 class="exp-company">PayPal / X.com</h3>
+                        <span class="exp-role">Co-Founder & CEO</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Co-founded online financial services bank X.com, which merged with Confinity to become PayPal, revolutionized digital payments, and was acquired by eBay for $1.5B.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card exp-card">
+                    <div class="exp-header">
+                        <span class="exp-time">1995 – 1999</span>
+                        <h3 class="exp-company">Zip2</h3>
+                        <span class="exp-role">Co-Founder</span>
+                    </div>
+                    <div>
+                        <p class="exp-description">
+                            Developed internet city guide software providing map and business directories for news publishers; acquired by Compaq for $307M.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <span class="section-tag">03. Capabilities</span>
+                <h2 class="section-title">Technical & Strategic Core</h2>
+            </div>
+            <div class="skills-grid">
+                
+                <div class="card">
+                    <h3 class="skill-category-title">
+                        Executive Leadership & Strategy
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">First-Principles Thinking</span>
+                        <span class="tag">Venture Building</span>
+                        <span class="tag">Capital Allocation</span>
+                        <span class="tag">Product Architecture</span>
+                        <span class="tag">Scaling Infrastructure</span>
+                        <span class="tag">High-Risk Management</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="skill-category-title">
+                        Engineering & Tech Architecture
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">Aerospace Engineering</span>
+                        <span class="tag">Rocket Propulsion</span>
+                        <span class="tag">EV Powertrain Design</span>
+                        <span class="tag">Battery Physics</span>
+                        <span class="tag">Robotics & Actuation</span>
+                        <span class="tag">Subterranean Tunnels</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="skill-category-title">
+                        Artificial Intelligence & Software
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">Large Language Models (Grok)</span>
+                        <span class="tag">Computer Vision Systems</span>
+                        <span class="tag">Neural Networks</span>
+                        <span class="tag">Autopilot & FSD Stack</span>
+                        <span class="tag">High-Throughput Compute</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="skill-category-title">
+                        Industrial Operations
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">Gigafactory Engineering</span>
+                        <span class="tag">Supply Chain Optimization</span>
+                        <span class="tag">Automated Manufacturing</span>
+                        <span class="tag">Regulatory Navigation</span>
+                        <span class="tag">Rapid Prototyping</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-header">
+                <span class="section-tag">04. Key Innovations</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="grid-3">
+                
+                <div class="card project-card">
+                    <div>
+                        <div class="project-header">
+                            <h3 class="project-title">SpaceX Starship</h3>
+                        </div>
+                        <p class="project-desc">
+                            Fully reusable launch system designed to carry crew and cargo to Earth orbit, the Moon, Mars, and beyond.
+                        </p>
+                    </div>
+                    <div class="project-stack">
+                        <span class="stack-item">Raptor Engines</span>
+                        <span class="stack-item">Stainless Steel Composite</span>
+                        <span class="stack-item">Orbital Refueling</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="project-header">
+                            <h3 class="project-title">Starlink Constellation</h3>
+                        </div>
+                        <p class="project-desc">
+                            World's largest low-Earth orbit satellite constellation delivering resilient, low-latency broadband worldwide.
+                        </p>
+                    </div>
+                    <div class="project-stack">
+                        <span class="stack-item">LEO Satellites</span>
+                        <span class="stack-item">Laser Inter-Links</span>
+                        <span class="stack-item">Phased Array</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="project-header">
+                            <h3 class="project-title">Tesla FSD & Optimus</h3>
+                        </div>
+                        <p class="project-desc">
+                            End-to-end neural networks driving vision-based autonomous driving and humanoid robotics platform.
+                        </p>
+                    </div>
+                    <div class="project-stack">
+                        <span class="stack-item">Vision AI</span>
+                        <span class="stack-item">Neural Nets</span>
+                        <span class="stack-item">Dojo Supercomputing</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="project-header">
+                            <h3 class="project-title">Grok AI Platform</h3>
+                        </div>
+                        <p class="project-desc">
+                            Frontier LLM built by xAI with real-time understanding and unfiltered access to world information.
+                        </p>
+                    </div>
+                    <div class="project-stack">
+                        <span class="stack-item">Frontier LLM</span>
+                        <span class="stack-item">Cluster Optimization</span>
+                        <span class="stack-item">Real-Time Data</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="project-header">
+                            <h3 class="project-title">Neuralink N1 Implant</h3>
+                        </div>
+                        <p class="project-desc">
+                            Fully implantable, cosmetically invisible brain-computer interface designed to decode neural signals.
+                        </p>
+                    </div>
+                    <div class="project-stack">
+                        <span class="stack-item">BCI Electronics</span>
+                        <span class="stack-item">Surgical Robotics</span>
+                        <span class="stack-item">Neural Decoding</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <div class="project-header">
+                            <h3 class="project-title">Las Vegas Loop</h3>
+                        </div>
+                        <p class="project-desc">
+                            High-speed subterranean transit system reducing congestion through zero-emission underground tunnels.
+                        </p>
+                    </div>
+                    <div class="project-stack">
+                        <span class="stack-item">Purdue Boring Machines</span>
+                        <span class="stack-item">EV Transit</span>
+                        <span class="stack-item">Subterranean Tech</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-header">
+                <span class="section-tag">05. Academic & Honors</span>
+                <h2 class="section-title">Education & Certifications</h2>
+            </div>
+            <div class="grid-2">
+                
+                <div>
+                    <h3 class="skill-category-title" style="margin-bottom: 1.5rem;">Academic Credentials</h3>
+                    
+                    <div class="card edu-card">
+                        <div class="edu-school">University of Pennsylvania</div>
+                        <div class="edu-degree">B.S. in Economics (Wharton School)</div>
+                        <div class="edu-degree">B.A. in Physics</div>
+                        <div class="edu-meta">Graduated 1997</div>
+                    </div>
+
+                    <div class="card edu-card">
+                        <div class="edu-school">Queen's University</div>
+                        <div class="edu-degree">Undergraduate Studies</div>
+                        <div class="edu-meta">1990 – 1992</div>
+                    </div>
+
+                    <div class="card edu-card">
+                        <div class="edu-school">Pretoria Boys High School</div>
+                        <div class="edu-degree">Secondary Education</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="skill-category-title" style="margin-bottom: 1.5rem;">Honors & Fellowships</h3>
+                    
+                    <div class="card honor-card">
+                        <div class="honor-title">Fellow of the Royal Society (FRS)</div>
+                        <div class="honor-issuer">Royal Society • 2018</div>
+                    </div>
+
+                    <div class="card honor-card">
+                        <div class="honor-title">National Academy of Engineering Member</div>
+                        <div class="honor-issuer">NAE • 2022</div>
+                    </div>
+
+                    <div class="card honor-card">
+                        <div class="honor-title">FAI Gold Space Medal</div>
+                        <div class="honor-issuer">Fédération Aéronautique Internationale • 2010</div>
+                    </div>
+
+                    <div class="card honor-card">
+                        <div class="honor-title">IEEE Honorary Membership</div>
+                        <div class="honor-issuer">Institute of Electrical and Electronics Engineers • 2015</div>
+                    </div>
+
+                    <div class="card honor-card">
+                        <div class="honor-title">Honorary Doctorate in Engineering</div>
+                        <div class="honor-issuer">Yale University • 2015</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-card">
+                <h2 class="contact-title">Connect & Inquiries</h2>
+                <p class="contact-desc">
+                    Official channels, media communications, and executive corporate contact points.
+                </p>
+                <div class="contact-links">
+                    <a href="https://x.com/elonmusk" target="_blank" rel="noopener" class="btn btn-primary">
+                        X (@elonmusk)
+                    </a>
+                    <a href="https://www.spacex.com" target="_blank" rel="noopener" class="btn btn-secondary">
+                        SpaceX HQ
+                    </a>
+                    <a href="https://www.tesla.com" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Tesla HQ
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Elon Musk Portfolio. Built using semantic CSS and pure HTML.</p>
+    </footer>
+
+</body>
+</html>
